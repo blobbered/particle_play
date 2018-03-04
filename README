@@ -1,1 +1,3 @@
-To run, start a server. E.g., `http-server`
+Is it fun to exert one's force on circles on a screen? Warming up to Phaser's arcade physics and looking for what fun might mean.
+
+To run locally, start a server. E.g., `http-server`. Then visit localhost:8080 in your favourite browser.
