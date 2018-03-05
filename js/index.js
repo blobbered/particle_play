@@ -6,11 +6,24 @@ window.onload = (function() {
 
   function preload() {
     game.load.image('circle', 'assets/circle.png');
-    game.state.add('ParticlesAwayState', states['particlesAway']);
+    game.state.add('particlesAway', states['particlesAway']);
   }
 
   function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.state.start('ParticlesAwayState');
+    game.state.start('particlesAway');
+
+    game.input.keyboard.addCallbacks(this, null, null, switchState);
+  }
+
+  function switchState() {
+    const statesList = Object.keys(states);
+    const currentStateIndex = statesList.indexOf(game.state.current);
+    const nextStateIndex = currentStateIndex < statesList.length - 1 ? currentStateIndex + 1 : 0;
+    game.state.start(statesList[nextStateIndex]);
+    console.log(nextStateIndex);
+  }
+
+  function update() {
   }
 })();
