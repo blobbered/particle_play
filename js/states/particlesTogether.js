@@ -6,7 +6,7 @@ states['particlesTogether'] = (function() {
       particles = [];
       for(let i = 0; i < 10; i++) {
         particles.push(game.add.sprite(Math.random() * game.width, Math.random() * game.height, 'circle'));
-        particles[i].tint = 16724639;
+        particles[i].tint = Math.round(Math.random() * 16777215);
       }
 
       particles.forEach(particle => {
