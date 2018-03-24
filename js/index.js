@@ -7,11 +7,12 @@ window.onload = (function() {
   function preload() {
     game.load.image('circle', 'assets/circle.png');
     game.state.add('particlesAway', states['particlesAway']);
+    game.state.add('particlesTogether', states['particlesTogether']);
   }
 
   function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.state.start('particlesAway');
+    game.state.start('particlesTogether');
 
     game.input.keyboard.addCallbacks(this, null, null, switchState);
   }
